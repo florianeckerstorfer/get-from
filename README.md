@@ -65,6 +65,14 @@ $baz = florianec\get_from($data, ['baz'], 'qux');
 ```
 
 
+Changelog
+---------
+
+### Version 1.0 (9 March 2014)
+
+- Initial release
+
+
 Inspiration
 -----------
 
