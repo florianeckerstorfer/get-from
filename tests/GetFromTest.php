@@ -14,12 +14,17 @@ class GetFromTest extends \PHPUnit_Framework_TestCase
     {
         $single = new \stdClass;
         $single->key = 'value';
+
+
         $nested = new \stdClass;
         $nested->foo = new \stdClass;
         $nested->foo->bar = new \stdClass;
         $nested->foo->bar->baz = 'value';
+
         $list = [new \stdClass];
         $list[0]->name = 'foo';
+
+        $singleArray = ['key' => 'value'];
 
         $expected2 = new \stdClass;
         $expected2->bar = new \stdClass;
@@ -40,6 +45,7 @@ class GetFromTest extends \PHPUnit_Framework_TestCase
             [$nested, $nested, []],
             ['foo', $list, [0, 'name']],
             [null, ['foo' => null], ['foo'], 'err'],
+            ['default', $singleArray, ['invalid'], 'default']
         ];
     }
 }
